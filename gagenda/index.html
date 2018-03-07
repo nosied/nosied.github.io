@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+
+  <!-- CSS  -->
+</head>
+<body>
+<td id="premium_exchange_rate_iron" class="center">
+                    <div class="premium-exchange-sep"><img src="https://dsbr.innogamescdn.com/8.113/35962/graphic/resources/iron_18x16.png" alt=""> 756</div>
+                    <div class="premium-exchange-sep">
+                        ⇄
+                    </div>
+                    <div class="premium-exchange-sep">
+                        <img src="https://dsbr.innogamescdn.com/8.113/35962/graphic/resources/premium.png" title="Pontos premium:" alt="" class=""> 1
+                    </div>
+                </td>
+<td id="premium_exchange_rate_stone" class="center">
+                    <div class="premium-exchange-sep"><img src="https://dsbr.innogamescdn.com/8.113/35962/graphic/resources/stone_18x16.png" alt=""> 642</div>
+                    <div class="premium-exchange-sep">
+                        ⇄
+                    </div>
+                    <div class="premium-exchange-sep">
+                        <img src="https://dsbr.innogamescdn.com/8.113/35962/graphic/resources/premium.png" title="Pontos premium:" alt="" class=""> 1
+                    </div>
+                </td>
+<td id="premium_exchange_rate_wood" class="center">
+                    <div class="premium-exchange-sep"><img src="https://dsbr.innogamescdn.com/8.113/35962/graphic/resources/wood_18x16.png" alt=""> 991</div>
+                    <div class="premium-exchange-sep">
+                        ⇄
+                    </div>
+                    <div class="premium-exchange-sep">
+                        <img src="https://dsbr.innogamescdn.com/8.113/35962/graphic/resources/premium.png" title="Pontos premium:" alt="" class=""> 1
+                    </div>
+                </td>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+//valores em milésimo de segundos, ex: 1000 = 1s
+var time = 10000;
+var totaltime = 500000;
+//valores dos recursos para receber o alerta
+var RecMin = 400;
+var RecMax = 850;
+$(document).ready(function(){
+var intervalo = window.setInterval(function() {
+	var ferro=$("#premium_exchange_rate_iron").text();
+	var argila=$("#premium_exchange_rate_stone").text();
+	var madeira=$("#premium_exchange_rate_wood").text();
+	ferro = (ferro.substr(22, 3));
+	argila = (argila.substr(23, 3));
+	madeira = (madeira.substr(22, 3));
+	ferro=ferro.toString();
+	argila=argila.toString();
+	madeira=madeira.toString();
+	
+	if((ferro > RecMax) || (argila > RecMax) || (madeira > RecMax))
+	alert("Comprar Recursos agora!");
+	
+}, time);
+
+window.setTimeout(function() {
+    clearInterval(intervalo);
+}, totaltime);
+});
+/*$(document).ready(function(){
+var intervalo = window.setInterval(function() {
+	var email=$("#premium_exchange_rate_iron").text();
+	var array = email.split('alt=""> ');
+	var var1 = array[0];
+	var var2 = array[1];
+	console.log(email);
+	console.log(var2);
+}, 5000);
+
+window.setTimeout(function() {
+    clearInterval(intervalo);
+}, 100000);
+});*/
+</script>
+</body>
+</html>
